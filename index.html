@@ -67,22 +67,26 @@
       to { transform: scale(1.05); box-shadow: 0 0 30px #00ff6e; }
     }
 
-    .info-box {
-      background-color: rgba(255, 255, 255, 0.2); /* Fondo transparente */
-      color: #000;
-      border-radius: 15px;
-      padding: 20px;
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
       max-width: 500px;
       margin: 0 auto;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      font-size: 17px;
-      line-height: 1.6;
-      backdrop-filter: blur(6px); /* efecto glass suave */
     }
 
-    .info-box div {
-      margin: 15px 0;
+    .info-box {
+      background-color: rgba(200, 200, 200, 0.2); /* grisáceo y transparente */
+      color: #000;
+      border-radius: 15px;
+      padding: 18px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      font-size: 17px;
       font-weight: bold;
+      line-height: 1.5;
     }
   </style>
 
@@ -117,10 +121,17 @@
     🎁 Obtener mi bono YA!
   </a>
 
-  <!-- Recuadro de bono y carga mínima -->
-  <div class="info-box">
-    <div>💰 <strong>¡BONO EXCLUSIVO DEL 20%!</strong><br>🎉 Obtené un 20% extra en tu primer depósito.</div>
-    <div>📥 <strong>Depósito mínimo: $2000</strong><br>⚠️ Empezá a jugar con solo $2000 de carga inicial.</div>
+  <!-- Recuadros separados -->
+  <div class="info-container">
+    <div class="info-box">
+      💰 <strong>¡BONO EXCLUSIVO DEL 20%!</strong><br>
+      🎉 Obtené un 20% extra en tu primer depósito.
+    </div>
+
+    <div class="info-box">
+      📥 <strong>Depósito mínimo: $2000</strong><br>
+      ⚠️ Empezá a jugar con solo $2000 de carga inicial.
+    </div>
   </div>
 
   <script>
