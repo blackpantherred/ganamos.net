@@ -5,23 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ganamos.net</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Arial', sans-serif;
       background: linear-gradient(135deg, #2d0055, #9d00b7);
       color: white;
       text-align: center;
     }
 
-    .logo {
-      margin-top: 60px;
-      animation: pulse 2s infinite;
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
     .logo img {
       width: 90px;
       height: auto;
       filter: drop-shadow(0 0 10px white);
+      animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
@@ -32,20 +42,19 @@
 
     h1 {
       font-size: 28px;
-      margin-top: 30px;
+      margin: 30px 0 10px;
     }
 
     p {
       font-size: 18px;
-      margin: 10px 20px;
+      margin: 10px 0 30px;
+      max-width: 90%;
     }
 
     .boton-bono {
-      display: inline-block;
       background-color: #00c853;
       color: white;
       padding: 18px 32px;
-      margin: 30px auto;
       border: none;
       border-radius: 12px;
       font-size: 20px;
@@ -60,17 +69,6 @@
       from { transform: scale(1); box-shadow: 0 0 20px #00c853; }
       to { transform: scale(1.05); box-shadow: 0 0 30px #00ff6e; }
     }
-
-    .info {
-      margin: 40px auto 80px;
-      font-size: 16px;
-      max-width: 90%;
-      line-height: 1.6;
-    }
-
-    .info div {
-      margin: 10px 0;
-    }
   </style>
 
   <!-- Pixel Meta -->
@@ -82,8 +80,7 @@
       n.queue=[];t=b.createElement(e);t.async=!0;
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
-    }(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '751090234134442');
     fbq('track', 'PageView');
   </script>
@@ -104,11 +101,6 @@
   <a class="boton-bono" id="whatsapp-button" href="https://wa.me/5493413673837" target="_blank">
     🎁 Obtener mi bono YA!
   </a>
-
-  <div class="info">
-    <div>💰 <strong>20% en el primer depósito</strong><br/>Obtené un bono del 20% en tu primer depósito.</div>
-    <div>🎯 <strong>Mínimo $2000</strong><br/>Ingresá al juego con un depósito mínimo de $2000.</div>
-  </div>
 
   <script>
     document.getElementById('whatsapp-button').addEventListener('click', function() {
