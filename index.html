@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reclama tu Bono</title>
-  
+  <title>Ganamos.net - Bono de Bienvenida</title>
+
   <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -26,38 +26,53 @@
 
   <style>
     body {
-      background-color: #fff;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #3a0ca3, #7209b7, #f72585);
+      color: white;
       text-align: center;
+      padding: 20px;
     }
 
-    .whatsapp-preview {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 25px;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid white;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 16px;
+      margin-bottom: 30px;
     }
 
     .button {
       background-color: #25D366;
       color: white;
-      border: none;
       padding: 15px 25px;
       font-size: 18px;
+      border: none;
       border-radius: 50px;
       cursor: pointer;
       animation: blink 1s infinite alternate;
       box-shadow: 0 0 15px #25D366;
       transition: transform 0.2s ease-in-out;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .button:hover {
@@ -65,30 +80,74 @@
     }
 
     @keyframes blink {
-      0% {
-        box-shadow: 0 0 5px #25D366;
+      from {
+        box-shadow: 0 0 10px #25D366;
       }
-      100% {
-        box-shadow: 0 0 25px #25D366;
+      to {
+        box-shadow: 0 0 30px #25D366;
       }
     }
 
-    .info {
-      margin-top: 15px;
+    .features {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 12px;
+      flex: 1 1 48%;
+      min-width: 150px;
+    }
+
+    .card span {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .card p {
       font-size: 14px;
-      color: #333;
+      margin: 5px 0 0;
     }
   </style>
 </head>
 <body>
-  <div class="whatsapp-preview">
-    <h2>Estás a punto de reclamar tu bono</h2>
-    <button class="button" onclick="sendWhatsApp()">RECLAMA TU BONO</button>
-    <p class="info">* Bono del 20% exclusivo para nuevos usuarios</p>
+  <div class="container">
+    <img src="logo-04.png" alt="Logo Ganamos.net" class="logo" />
+    <h1>¡Bienvenido a Ganamos.net!</h1>
+    <p class="subtitle">
+      Tu destino online para la mejor experiencia en juegos de azar y promociones exclusivas.
+    </p>
+    <button class="button" onclick="reclamarBono()">
+      🎁 Obtener mi bono YA!
+    </button>
+
+    <div class="features">
+      <div class="card">
+        <span>💰</span>
+        <h3>20% en el primer depósito</h3>
+        <p>Obtené un bono del 20% en tu primer depósito.</p>
+      </div>
+      <div class="card">
+        <span>🎯</span>
+        <h3>Mínimo $2000</h3>
+        <p>Ingresá al juego con un depósito mínimo de $2000.</p>
+      </div>
+    </div>
   </div>
 
   <script>
-    function sendWhatsApp() {
+    function reclamarBono() {
       fbq('trackCustom', 'ClickWhatsAap');
       window.location.href = 'https://wa.me/5493413673837';
     }
