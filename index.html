@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reclama tu Bono</title>
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+    fbq('init', '751090234134442');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=751090234134442&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .whatsapp-preview {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    .button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      animation: blink 1s infinite alternate;
+      box-shadow: 0 0 15px #25D366;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes blink {
+      0% {
+        box-shadow: 0 0 5px #25D366;
+      }
+      100% {
+        box-shadow: 0 0 25px #25D366;
+      }
+    }
+
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="whatsapp-preview">
+    <h2>Estás a punto de reclamar tu bono</h2>
+    <button class="button" onclick="sendWhatsApp()">RECLAMA TU BONO</button>
+    <p class="info">* Bono del 20% exclusivo para nuevos usuarios</p>
+  </div>
+
+  <script>
+    function sendWhatsApp() {
+      fbq('trackCustom', 'ClickWhatsAap');
+      window.location.href = 'https://wa.me/5493413673837';
+    }
+  </script>
+</body>
+</html>
