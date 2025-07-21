@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Reclamá tu bono!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ganamos.net</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #ffffff;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #2d0055, #9d00b7);
+      color: white;
       text-align: center;
     }
 
     .logo {
-      margin-top: 50px;
+      margin-top: 60px;
+      animation: pulse 2s infinite;
     }
 
     .logo img {
-      width: 120px;
+      width: 90px;
       height: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     h1 {
+      font-size: 28px;
       margin-top: 30px;
-      font-size: 24px;
-      color: #000;
     }
 
-    .bonus-text {
-      margin-top: 10px;
+    p {
       font-size: 18px;
-      color: #444;
+      margin: 10px 20px;
     }
 
     .boton-bono {
-      margin: 40px auto;
-      padding: 20px 30px;
-      font-size: 20px;
-      background-color: #25D366;
-      color: #fff;
+      display: inline-block;
+      background-color: #00c853;
+      color: white;
+      padding: 18px 32px;
+      margin: 30px auto;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
       cursor: pointer;
       animation: flash 1s infinite alternate;
-      box-shadow: 0 0 15px #25D366;
       text-decoration: none;
-      display: inline-block;
+      box-shadow: 0 0 20px #00c853;
     }
 
     @keyframes flash {
-      from {
-        transform: scale(1);
-        box-shadow: 0 0 15px #25D366;
-      }
-      to {
-        transform: scale(1.05);
-        box-shadow: 0 0 30px #25D366;
-      }
+      from { transform: scale(1); box-shadow: 0 0 20px #00c853; }
+      to { transform: scale(1.05); box-shadow: 0 0 30px #00ff6e; }
     }
 
-    .detalle-bono {
+    .info {
+      margin-top: 30px;
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 12px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .info div {
+      margin: 10px 0;
       font-size: 16px;
-      color: #333;
     }
   </style>
 
@@ -86,24 +97,28 @@
 </head>
 
 <body>
+
   <div class="logo">
-    <img src="logo-04.png" alt="Logo Casino">
+    <img src="logo-04.png" alt="Ícono de casino" />
   </div>
 
-  <h1>Estás por entrar a WhatsApp</h1>
-  <p class="bonus-text">Hacé clic para reclamar tu bono exclusivo</p>
+  <h1>¡Bienvenido a Ganamos.net!</h1>
+  <p>Tu destino online para la mejor experiencia en juegos de azar y promociones exclusivas.</p>
 
   <a class="boton-bono" id="whatsapp-button" href="https://wa.me/5493413673837" target="_blank">
-    RECLAMÁ TU BONO
+    🎁 Obtener mi bono YA!
   </a>
 
-  <p class="detalle-bono">Bono del 20% en tu primer depósito</p>
+  <div class="info">
+    <div>💰 <strong>20% en el primer depósito</strong><br/>Obtené un bono del 20% en tu primer depósito.</div>
+    <div>🎯 <strong>Mínimo $2000</strong><br/>Ingresá al juego con un depósito mínimo de $2000.</div>
+  </div>
 
   <script>
-    // Evento personalizado cuando se hace clic en el botón
     document.getElementById('whatsapp-button').addEventListener('click', function() {
       fbq('trackCustom', 'ClickWhatsAap');
     });
   </script>
+
 </body>
 </html>
